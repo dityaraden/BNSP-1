@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$ipk = 3.5;
+$ipk = 4;
 $_SESSION['ipk'] = $ipk;
 ?>
 
@@ -61,6 +61,16 @@ $_SESSION['ipk'] = $ipk;
                     <label for="nama" class="form-label">Nama:</label>
                     <input type="text" class="form-control" name="nama" autocomplete="off" required>
                </div>
+
+               
+               <label for='jenis-kelamin'>Jenis Kelamin</label> <br>
+                    <select id="jenis_kelamin" name="jenis_kelamin">
+                         <option value="lk">Laki-laki</option>
+                         <option value="pr">Perempuan</option>
+                         <option value="rahasia">Rahasia</option>
+                    </select>
+               
+                              
 
                <div class="">
                     <label for="email" class="form-label">Email:</label>
