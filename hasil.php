@@ -60,6 +60,7 @@ $result = mysqli_query($conn, $sql);
                     <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                          <tr>
                               <td class="text-center align-middle"><?php echo $row['nama']; ?></td>
+                              <td class="text-center align-middle"><?php echo $row['jenis_kelamin']; ?></td>
                               <td class="text-center align-middle"><?php echo $row['email']; ?></td>
                               <td class="text-center align-middle"><?php echo $row['nomor_hp']; ?></td>
                               <td class="text-center align-middle"><?php echo $row['semester']; ?></td>

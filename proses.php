@@ -11,6 +11,7 @@ if (!$conn) {
 
 if (isset($_POST['daftar'])) {
      $nama = $_POST['nama'];
+     $jenis_kelamin = $_POST['jenis_kelamin'];
      $email = $_POST['email'];
      $nomor_hp = $_POST['nomor_hp'];
      $semester = $_POST['semester'];
@@ -31,11 +32,11 @@ if (isset($_POST['daftar'])) {
           $status_ajuan = 'Tidak memenuhi syarat';
      }
 
-     $sql = "INSERT INTO mahasiswa (nama, email, nomor_hp, semester, ipk, berkas_path, pil_beasiswa, status_ajuan)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+     $sql = "INSERT INTO mahasiswa (nama, jenis_kelamin, email, nomor_hp, semester, ipk, berkas_path, pil_beasiswa, status_ajuan)
+            VALUES (?, ?, ?,?, ?, ?, ?, ?, ?)";
 
      $stmt = mysqli_prepare($conn, $sql);
-     mysqli_stmt_bind_param($stmt, "ssssdsss", $nama, $email, $nomor_hp, $semester, $ipk, $berkas_path, $beasiswa, $status_ajuan);
+     mysqli_stmt_bind_param($stmt, "ssssdssss", $nama, $jenis_kelamin, $email, $nomor_hp, $semester, $ipk, $berkas_path, $beasiswa, $status_ajuan);
 
      if (mysqli_stmt_execute($stmt)) {
           header("Location: hasil.php");
